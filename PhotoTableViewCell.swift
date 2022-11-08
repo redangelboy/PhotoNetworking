@@ -13,35 +13,47 @@ class PhotoTableViewCell: UITableViewCell {
 
         let image = UIImageView(frame: .zero)
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "1 gokultra")
-        image.backgroundColor = .blue
-        image.contentMode = .scaleAspectFit
+        image.backgroundColor = .systemBlue
         
-        
-        
-        return image
-        
+//        image.contentMode = .scaleAspectFit
     
-        
-        
+        return image
     }()
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setUPImg()
-        // Initialization code
+    
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
+            super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+            setUPImg()
+        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
+    
+
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//
+////        setUPImg()
+//        // Initialization code
+//    }
+
 
     func setUPImg () {
         
-        self.backgroundColor = .systemRed
+        self.backgroundColor = .white
         
         self.contentView.addSubview(self.ImageView)
         
-        self.ImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8).isActive = true
+        self.ImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8).isActive = true
         self.ImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8).isActive = true
         self.ImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8).isActive = true
+        self.ImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        self.ImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
         
+        self.ImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        self.ImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
 
         
     }
@@ -55,3 +67,5 @@ class PhotoTableViewCell: UITableViewCell {
     }
 
 }
+
+
