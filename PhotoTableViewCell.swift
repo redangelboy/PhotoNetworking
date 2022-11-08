@@ -22,6 +22,7 @@ class PhotoTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.text = "Random Image"
         
+        
         return label
         
     }()

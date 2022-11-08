@@ -7,7 +7,6 @@ import UIKit
 class ViewController: UIViewController {
     
     var tableView: UITableView?
-
     
     lazy var stockImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
@@ -74,7 +73,9 @@ extension ViewController: UITableViewDataSource {
             DispatchQueue.main.async {
                 print(data)
                 cell.ImageView.image = UIImage(data: data)
-
+                cell.TopLabel.text = "Image ID:"+(self.network.tempID)
+                
+                
             }
         }
     

@@ -8,6 +8,7 @@
 import Foundation
 
 class NetworkManager {
+    var tempID : String = ""
     func fetchImageData(path: String, completion: @escaping (Data?) -> Void) {
         
         guard let url = URL(string: path) else{
@@ -23,6 +24,8 @@ class NetworkManager {
                 return
             }
             
+            let httpResponse = response as? HTTPURLResponse
+            self.tempID = httpResponse?.value(forHTTPHeaderField: "picsum-id") ?? "0"
             completion(data)
             
         }
